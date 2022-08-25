@@ -10,6 +10,14 @@ import uploadRouter from "./routes/uploadRouter.js";
 
 dotenv.config();
 
+const app = express();
+const cors = require("cors");
+
+app.use(cors());
+
+app.use(express.json({ limit: "50mb" }));
+app.use(express.urlencoded({ extended: true, limit: "50mb" }));
+
 mongoose
   .connect(process.env.MONGODB_URI)
   .then(() => {
@@ -18,11 +26,6 @@ mongoose
   .catch((err) => {
     console.log(err.message);
   });
-
-const app = express();
-
-app.use(express.json({ limit: "50mb" }));
-app.use(express.urlencoded({ extended: true, limit: "50mb" }));
 
 app.get("/api/keys/paypal", (req, res) => {
   res.send(process.env.PAYPAL_CLIENT_ID || "sb"); // what is sb sandbox so you should only add s not the whole link??
