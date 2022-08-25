@@ -7,11 +7,11 @@ import productRouter from "./routes/productRouter.js";
 import userRouter from "./routes/userRouter.js";
 import orderRouter from "./routes/orderRouter.js";
 import uploadRouter from "./routes/uploadRouter.js";
+import cors from "cors";
 
 dotenv.config();
 
 const app = express();
-const cors = require("cors");
 
 app.use(cors());
 
