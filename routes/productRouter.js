@@ -16,13 +16,13 @@ productRouter.post(
   isAdmin,
   expressAsyncHandler(async (req, res) => {
     const newProduct = new Product({
-      name: "Crew Neck T-Shirt",
-      slug: "crew neck t shirt",
-      image: "/images/sports-2.jpg",
-      images: "/images/sports-2.jpg",
-      price: 40,
+      name: "Women TRENDY TOP",
+      slug: "trendy top",
+      image: "/images/women-2.jpg",
+      images: "/images/women-1.jpg",
+      price: 25,
       category: "Cloths",
-      brand: "Crew",
+      brand: "Freeland",
       countInStock: 2,
       rating: 3,
       numReviews: 4,
@@ -112,7 +112,7 @@ productRouter.post(
   })
 );
 
-const PAGE_SIZE = 4;
+const PAGE_SIZE = 20;
 
 productRouter.get(
   "/admin",

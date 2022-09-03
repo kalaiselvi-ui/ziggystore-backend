@@ -27,12 +27,12 @@ mongoose
   });
 
 app.get("/api/keys/paypal", (req, res) => {
-  res.send(process.env.PAYPAL_CLIENT_ID || "sb"); // what is sb sandbox so you should only add s not the whole link??
+  res.send(process.env.PAYPAL_CLIENT_ID || "sb");
 });
 
-// app.get('/api/keys/google', (req, res) => {
-//     res.send({ key: process.env.GOOGLE_API_KEY || '' });
-//   });
+app.get("/api/keys/google", (req, res) => {
+  res.send({ key: process.env.GOOGLE_API_KEY || "" });
+});
 
 app.use("/api/upload", uploadRouter);
 app.use("/api/seed", seedRouter);
